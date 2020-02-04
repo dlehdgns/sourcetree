@@ -1,4 +1,30 @@
-https://hackersstudy.tistory.com/41
-https://parkwonhui.github.io/git/2018/12/17/Git-base.html
-https://blog.naver.com/coding-/221373003347 --- good
-https://gbsb.tistory.com/9
+1. remote - repository확인
+2. create - repository생성
+3. add - 추적할 파일 설정
+  - commit : 로컬 저장소에 저장
+  - push : 로컬 저장 내용 서버에 저장
+4. 되돌리기(discard, reset, revert 명령어)
+  - Discard (커밋하기 전, 되돌리기)
+    Staging Area 목록에서 되돌릴 파일을 선택한 뒤 [Discard] 버튼을 클릭하면 창이 뜸
+    [Discard Changes] 버튼을 클릭하면 최종 커밋된 버전으로 돌아감
+  - Reset (커밋해버린 후, 버전을 제거하고 되돌리기)
+    목록에서 되돌아가고 싶은 버전을 선택하고 마우스 우클릭한 뒤, 
+    'Reset current branch to this commit'을 선택하면 아래의 창이 뜸
+    Soft 모드
+    Mixed 모드 : 선택한 버전 이후의 모든 버전이 사라지지만 Working Directory에 남겨짐 
+                 작업중이던 Working Directory의 상태는 유지(소스에 중요한 정보가 들어가 있을 때 사용)
+    Hard 모드 : 선택한 버전 이후의 모든 버전이 삭제 
+                Working Directory와 Staging Area 공간에 있는 파일도 모두 삭제
+  - Revert (커밋해버린 후, 버전을 제거하지 않고 되돌리기)
+    버전을 제거하지 않고, 새로운 커밋을 생성하여 이전 상태로 되돌림 
+    목록에서 되돌아가고 싶은 버전을 선택하고 마우스 우클릭한 뒤 'Reverse Commit'을 선택
+    주의할 점 : 위에서부터 아래로, 즉 역순으로 차례대로 하나씩 Reverse Commit 해야 충돌이 발생하지 않음
+5. branch
+  - 원본과 실헝용 프로젝트 분리해서 만들고자 할 때 사용
+  1) branch 만들기
+  2) 브랜치 합치기(merge 명령어)
+    - 신규기능 테스트 완료하면 실험용 branch를 master branch로 합친다.
+    - 두개의 branch에서 서로 같은 위치의 코드를 변경하고 커밋하면 충돌 발생(해결 방법 : 충돌 부분 지운뒤, 해당 파일 우클릭 -> Resolve Conflict -> Mark Resolved)
+5. 협업하기
+  - clone으로 원격저장소 복제
+  - pull -> work -> commit -> pull -> push순으로 실행
